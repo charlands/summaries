@@ -1,4 +1,4 @@
-Spring Expression Language
+Spring Expression Language #{} - Injection de valeurs au «Runtime»
 
 Permet de: 
 
@@ -7,3 +7,16 @@ Permet de:
 - faire des opérations mathématiques, logiques et relationnels
 - Regex
 - Manipulation de collection
+
+
+
+***********************************************************************
+Opérations: 
+***********************************************************************
+arithmétique: + - * / % ^
+comparaison: < > == <= >= lt gt le ge
+logique : and or not |
+conditionnel: ?:(terniaire) ?:(Elvis operator)
+expressions régulières: matches
+
+   
