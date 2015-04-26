@@ -1,13 +1,17 @@
-Spring Expression Language #{} - Injection de valeurs au «Runtime»
+Sujet: Spring Expression Language #{} - Injection de valeurs au «Runtime»
+Date (init): 26 avril 2015
+Auteur: Sébastien Charland - charland.sebastien.java@gmail.com
 
+***********************************************************************
+Résumé des fonctionnalités: 
+***********************************************************************
 Permet de: 
 
-- Récupérer les beans par leurs ID
+- récupérer les beans par leurs ID
 - peut invoquer des méthodes et accéder aux propriétés des objets
 - faire des opérations mathématiques, logiques et relationnels
 - Regex
-- Manipulation de collection
-
+- manipulation de collection
 
 
 ***********************************************************************
@@ -19,4 +23,45 @@ logique : and or not |
 conditionnel: ?:(terniaire) ?:(Elvis operator)
 expressions régulières: matches
 
+
+***********************************************************************
+Utilisation des méthodes/propriétés statiques des classes (T)
+***********************************************************************  
+On ajoute T devant la classe: T(java.lang.Math).PI
+
+
+***********************************************************************
+Exemples: 
+***********************************************************************
+simples:
+#{3.14159} // float
+#{'hello'} //string
+#{'hello ' + myObj.name + ' from me'} //concatenation
+#{false} //boolean
+#{myObj} //objet
+#{myObj.modified} //propriété
+#{myObj.isModified()} //méthodes
+#{myObj.getName().toUpperCase()} //majuscule --> watch out!!! null pointer exception
+#{myObj.getName()?.toUpperCase()} //null pointer exception proof
+#{myObj.name ?: 'no name'} //Ze «Elvis operator» (même chose que myObj.name != null ? myObj.name : 'no name')
+#{total eq 100} //comparaison
+
+complexes:
+#{T(java.lang.Math).PI} //récupérer la constante PI
+#{T(System).currentTimeMillis()} //le temps courant en milli seconde
+#{myObj.name matches '[abc]'} //expression régulière
+
+collections:
+#{myCollection[4].name} //le nom du 4 ième objet de la collection
+#{myCollection.size()} //le nombre d'élément dans la collection
+#{'Ceci est un test'[3]} //retournera le 4ième caractère («i»)
+#{myCollection.?[name eq 'bullet']} //retournera une liste d'objets dont le nom est 'bullet'
+#{myCollection.^[name eq 'bullet']} //retournera le premier objet dont le nom est 'bullet'
+#{myCollection.$[name eq 'bullet']} //retournera le dernier objet dont le nom est 'bullet'
+#{myCollection.![name]}//retournera une liste avec seulement les propriétés «name»
+#{myCollection.?[name eq 'bullet'].![weight]} //retourne une liste des propriétés «weight» sur les objets dont la propriétés «name» est «bullet».
+
+
+
    
+
