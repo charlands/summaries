@@ -1,0 +1,52 @@
+Sujet: GIT 
+Date (init): 26 avril 2015
+Auteur: Sébastien Charland - charland.sebastien.java@gmail.com
+
+***********************************************************************
+Avantage de GIT: 
+***********************************************************************
+- Snapshot du projet au lieu de différences
+- Toutes les opérations sont pratiquement local (pas de synchronisation réseau)
+- Integrité (checksum en SHA-1 hash de 40 caractères)
+- On peut toujours récupérer des fichiers qui ont été supprimées dans la version actuelle, mais qui existait dans une version antérieure
+
+
+
+***********************************************************************
+Installation: 
+***********************************************************************
+Linux : apt-get install git-core
+Windows : http://msysgit.github.io/
+
+
+***********************************************************************
+Help:
+***********************************************************************
+git help <verb> ou git <verb> --help
+
+
+***********************************************************************
+Configuration: 
+***********************************************************************
+/etc/gitconfig --> configuration global
+~/.gitconfig --> config au niveau utilisateur
+config (dans le projet) --> configuration propre au projet
+
+git config --list #list les configurations
+git config --global user.name "Sébastien Charland" --> va mettre dans la config le user.name (Sébastien Charland)
+git config user.name --> affiche le username
+
+***********************************************************************
+États des fichiers
+***********************************************************************
+
+3 états d'un fichier: 
+- commited
+- staged
+- modified
+
+
+
+
+
+
