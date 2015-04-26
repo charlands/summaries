@@ -1,0 +1,9 @@
+Spring Expression Language
+
+Permet de: 
+
+- Récupérer les beans par leurs ID
+- peut invoquer des méthodes et accéder aux propriétés des objets
+- faire des opérations mathématiques, logiques et relationnels
+- Regex
+- Manipulation de collection
