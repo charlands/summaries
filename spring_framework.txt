@@ -1,0 +1,86 @@
+Sujet: Spring Framework (4.0) 
+Date (init): 26 avril 2015
+Auteur: Sébastien Charland - charland.sebastien.java@gmail.com
+
+
+***********************************************************************
+Les contextes: 
+***********************************************************************
+
+org.springframework.context.annotation.AnnotationConfigApplicationContext;
+org.springframework.context.support.ClassPathXmlApplicationContext;
+org.springframework.context.support.FileSystemXmlApplicationContext;
+
+org.springframework.web.context.support.XmlWebApplicationContext;
+org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+
+***********************************************************************
+maven
+***********************************************************************
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>
+			spring-aop | 
+			spring-aspects | 
+			spring-beans | 
+			spring-context | 
+			spring-context-support | 
+			spring-core | 
+			spring-expression | 
+			spring-instrument | 
+			spring-instrument-tomcat |
+			spring-jdbc | 
+			spring-jms | 
+			spring-messaging | 
+			spring-orm | 
+			pring-oxm | 
+			spring-test | 
+			spring-tx | 
+			spring-web | 
+			spring-webmvc |  
+			spring-webmvc-portlet | 
+			spring-websocket
+	</artifactId>
+	<version></version>
+</dependency>
+	
+***********************************************************************
+Annotations
+***********************************************************************
+
+| Annotation | Meaning                                             |
++------------+-----------------------------------------------------+
+| @Component | generic stereotype for any Spring-managed component |
+| @Repository| stereotype for persistence layer                    |
+| @Service   | stereotype for service layer                        |
+| @Controller| stereotype for presentation layer (spring-mvc)      |	
+	
+***********************************************************************	
+Configuration par XML:
+***********************************************************************
+
+Si des variables d'objet sont primordiales au bon fonctionnement de l'objet il est préférable de les passer par des arguments à un constructeur. Si, par contre, celle-ci sont optionnelles, 
+on peut les passer par propriétés (par setter).
+
+
+les 2 façons: par constructeur (arguments)
+xmlns:c="http://www.springframework.org/schema/c"
+
+	<bean id='test' class='ca.test.Object'
+	 	c:myVar = "valeur" (affecte «valeur» à la variable «myVar» du constructeur)
+	 	c:myVar-ref ="test" (même chose... sauf ici fait une référence à une bean)
+		//autre façon, mais plus abstraite... (2 arguments ci-bas)
+	 	c:_0 = "premier argument" (premier argument du constructeur)
+		c:_1 = "deuxième argument" (deuxième argument du constructeur)
+	  />
+
+xmlns:p="http://www.springframework.org/schema/p" --> propriétés
+
+	<bean id='test' class='ca.test.Object'
+	 	p:myVar = "valeur" (affecte «valeur» à la variable «myVar» par setter)
+	 	p:myVar-ref ="test" (même chose... sauf ici fait une référence à une bean)
+	  />
+	  
+
+ 
+ 
