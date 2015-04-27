@@ -40,7 +40,7 @@ simples:
 #{false} //boolean
 #{myObj} //objet
 #{myObj.modified} //propriété
-#{myObj.isModified()} //méthodes
+#{myObj.isModified()} //méthode
 #{myObj.getName().toUpperCase()} //majuscule --> watch out!!! null pointer exception
 #{myObj.getName()?.toUpperCase()} //null pointer exception proof
 #{myObj.name ?: 'no name'} //Ze «Elvis operator» (même chose que myObj.name != null ? myObj.name : 'no name')
