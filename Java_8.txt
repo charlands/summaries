@@ -1,0 +1,27 @@
+
+
+Lambda: utilisation d'une méthode passée en paramètre
+
+1 Créer un objet.
+
+2 Pour l'instant, utiliser des méthodes statiques de type «Predicate» (prédicat - une méthode avec un paramètre en entrée ex: l'objet et en sortie une valeur boolean). 
+
+ex: 
+ 	public static boolean isTest1(MyObject obj){
+		return obj.value == 1;
+	}
+	
+3 Créer un interface de type générique (ici on utilise «Predicate», mais ça pourrait être un autre nom): 
+	public interface Predicate<T>{
+		boolean test(T t); //méthode de type prédicat
+	}
+	
+4 Creer une méthode qui va utiliser l'interface «Predicate»
+
+	//teste l'objet obj avec la méthode qui sera passé en paramètre
+	public static void testMyObject(MyObject obj, Predicate<MyObject> p){
+		System.out.println(p.test(obj));
+	}
+	
+5 Utiliser cette méthode! : 
+	testMyObject(obj, MyObject::isTest1);
