@@ -1,6 +1,9 @@
-Sujet: GIT 
-Date (init): 26 avril 2015
-Auteur: Sébastien Charland - charland.sebastien.java@gmail.com
+
+
+
+
+*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
+GIT - GIT - GIT - GIT - GIT - GIT - GIT - GIT - GIT - GIT - GIT - GIT 
 
 ***********************************************************************
 Avantage de GIT: 
@@ -46,16 +49,5 @@ git config user.name --> affiche le username
 - modified
 
 
-Tracked - Untracked = Indique si un fichier doit être pris en considération pour un commit (tracked). En lien avec le fichier .gitIgnore
-
-
-HEAD = Pointeur sur la branche courante
-
-unstager un fichier = git reset HEAD <nom de fichier>
-
-
-git log
-git log --stat
-git log --pretty=oneline
-
+*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
 

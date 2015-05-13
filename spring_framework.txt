@@ -4,6 +4,19 @@ Auteur: Sébastien Charland - charland.sebastien.java@gmail.com
 
 
 ***********************************************************************
+Informations générales: 
+***********************************************************************
+
+Spring a été créé comme une alternative aux EJB.
+
+DI = Dependency injection = donner à l'objet ses dépendances au lieu que ça soit lui qui fasse la récupération. 
+Avantage : loose coupling
+
+
+Constructor Injection = injection à la construction d'un objet (par son constructeur)
+
+
+***********************************************************************
 Les contextes: 
 ***********************************************************************
 
@@ -13,6 +26,16 @@ org.springframework.context.support.FileSystemXmlApplicationContext;
 
 org.springframework.web.context.support.XmlWebApplicationContext;
 org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+
+
+
+contextes XML:
+
+
+
+
+
+
 
 ***********************************************************************
 maven
@@ -33,7 +56,7 @@ maven
 			spring-jms | 
 			spring-messaging | 
 			spring-orm | 
-			pring-oxm | 
+			spring-oxm | 
 			spring-test | 
 			spring-tx | 
 			spring-web | 
@@ -41,6 +64,12 @@ maven
 			spring-webmvc-portlet | 
 			spring-websocket
 	</artifactId>
+	<version></version>
+</dependency>
+
+<dependency>
+	<groupId>org.springframework.batch</groupId>
+	<artifactId>spring-batch-core</artifactId>
 	<version></version>
 </dependency>
 	
@@ -59,11 +88,17 @@ Annotations
 Configuration par XML:
 ***********************************************************************
 
+Récupération du contexte (ex) : ApplicationContext context = new ClassPathXmlApplicationContext("/spring/application-config.xml");
+
+<context:component-scan base-package="com.charlands"/>
+
+
 Si des variables d'objet sont primordiales au bon fonctionnement de l'objet il est préférable de les passer par des arguments à un constructeur. Si, par contre, celle-ci sont optionnelles, 
 on peut les passer par propriétés (par setter).
 
 
 les 2 façons: par constructeur (arguments)
+
 xmlns:c="http://www.springframework.org/schema/c"
 
 	<bean id='test' class='ca.test.Object'
@@ -83,4 +118,17 @@ xmlns:p="http://www.springframework.org/schema/p" --> propriétés
 	  
 
  
+ 
+***********************************************************************	
+JDBC:
+***********************************************************************
+
+Embedded Data Source (data source de type imbriqué) --> roule comme étant une partie de l'application au lieu de se connecter sur un serveur distant (excellent pour le développement et testes).
+Cependant, ça doit être une bdd en mémoire (ex HSQL, H2, ou Derby)...
+
+ 
+
+
+
+
  
