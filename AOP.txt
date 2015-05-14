@@ -1,1 +1,21 @@
 AOP
+
+http://fr.wikipedia.org/wiki/Tissage_dans_la_programmation_orient%C3%A9e_aspect
+
+GLOSSAIRE: 
+
+weaving: tisser
+weaver: tissage
+concerns : préocupation
+crosscutting: transversal (perpandiculaire)... penser à une coupe transversale de quelque chose
+tangling : emmêlement
+scattering: diffusion, dispersion, dissipation
+
+
+1 aspect = 1 fonctionnalité transversale (1 crosscutting fonctionality)
+
+
+Core concerns = Data access, Web Layer (la programmation OOP gère (sépare) bien ce genre de chose)
+
+Crosscutting concerns = Security, logging, resource, pooling, caching, performance monitoring, concurrency control, transaction management 
+(la programmation OOP ne peut séparer ce genre de chose dans le code... tout est mélangé dans les classes)
